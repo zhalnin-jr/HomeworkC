@@ -5,14 +5,14 @@
     int result = int.Parse(num);
     return result;
 }
-double GenerateArray(int Length)
+double[] GenerateArray(int Length)
 {
     double[] array = new double[Length];
     Random random = new Random();
     for (int i = 0; i < Length; i++)
     {
 
-        array[i] = random.NextDouble()*random.Next(0,100);
+        array[i] = Math.Round(Convert.ToDouble(random.Next(0,100)*random.NextDouble()),3);
     }
     return array;
 }
@@ -40,6 +40,6 @@ double Raznica(double[] array)
 }
 Console.Clear();
 int Length = Enter("Введите длину массива: ");
-double[] array = GenerateArray(array);
+double[] array = GenerateArray(Length);
 PrintArray(array);
 Console.Write($"\nРазница между максимальным и минимальным элементов массива: {Raznica(array)}");
