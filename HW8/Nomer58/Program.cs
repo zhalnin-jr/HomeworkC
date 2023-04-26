@@ -10,15 +10,11 @@ void start()
     int[,] matrix = GenerateArray(rows, columns);
     int[,] matrix2 = GenerateArray(row, column);
     printMatrix(matrix);
-     Console.WriteLine();
+    Console.WriteLine();
     printMatrix(matrix2);
     Console.WriteLine(" Полученная новая матрица ");
-    printMatrix(Ex(matrix,matrix2));
+    printMatrix(Ex(matrix, matrix2));
 }
-// bool CheckOfTrueSize(int rows, int columns, int row, int column)
-// {
-
-// }
 int Enter(string numb)
 {
     Console.Write(numb);
@@ -34,7 +30,7 @@ int[,] GenerateArray(int rows, int columns)
     {
         for (int j = 0; j < columns; j++)
         {
-            matrix[i, j] = rand.Next(1,10);
+            matrix[i, j] = rand.Next(1, 10);
         }
     }
     return matrix;
@@ -57,10 +53,10 @@ int[,] Ex(int[,] matrix, int[,] matrix2)
     {
         for (int j = 0; j < result.GetLength(1); j++)
         {
-           result[i,j] = 0;
+            result[i, j] = 0;
             for (int num = 0; num < matrix.GetLength(1); num++)
             {
-               result[i,j] += matrix[i,num] * matrix2[num, j]; 
+                result[i, j] += matrix[i, num] * matrix2[num, j];
             }
         }
     }
